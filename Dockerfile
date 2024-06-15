@@ -1,11 +1,9 @@
 FROM node:18
 
-WORKDIR /usr/src/bot
+COPY . /app
 
-COPY package.json /usr/src/bot
+WORKDIR /app  
 
 RUN npm install
-
-COPY . /usr/src/bot
 
 CMD ["node", "bot.js"]
