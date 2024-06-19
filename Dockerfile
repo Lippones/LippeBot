@@ -1,11 +1,15 @@
 FROM node:18
 
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    pulseaudio
+
 COPY . /app
 
 WORKDIR /app  
 
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 3000 5000
 
-CMD ["node", "bot.js"]
+CMD pulseaudio --start && node bot.js
