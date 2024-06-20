@@ -12,4 +12,4 @@ RUN npm install
 
 EXPOSE 3000 5000
 
-CMD pulseaudio --start && node bot.js
+CMD pulseaudio --start && node index.js
